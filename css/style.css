@@ -11,3 +11,7 @@ html {
 .body {
   margin: 20px;
 }
+
+.list__itemlist__item--done {
+  text-decoration: line-through;
+}

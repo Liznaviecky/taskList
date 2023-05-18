@@ -8,7 +8,7 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li ${task.done ? "style=\"text-decoration: line-through\"" : ""}>
+            <li class="list__item${task.done ? "list__item--done" : ""}">
             <button class="js-done">Zrobione?</button>
             <button class="js-remove">Usuń</button>
             ${task.content}
@@ -30,7 +30,7 @@
         render();
     };
 
-    const toggleTaskDone = (taskIndex) => {
+    const toggleTaskDone = (taskIndex,) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
     };
@@ -45,7 +45,7 @@
         const taskDoneButton = document.querySelectorAll(".js-done");
 
         taskDoneButton.forEach((taskDoneButton, taskIndex) => {
-            taskDoneButton.addEventListener("click", () => {
+            taskDoneButton.addEventListener("click", () => { 
                 toggleTaskDone(taskIndex);
             });
         });
