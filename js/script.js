@@ -9,7 +9,7 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item${task.done ? "list__item--done" : ""}">
-            <button class="js-done">Zrobione?</button>
+            <button class="js-button js-done">Zrobione?</button>
             <button class="js-remove">Usuń</button>
             ${task.content}
             </li>
@@ -37,15 +37,21 @@
 
     const taskRemove = (taskIndex) => {
         tasks.splice(taskIndex, 1);
-                render();
+        render();
+    };
+
+    const toggleButton = (switchButton) => {
+        switchButton.classList.toggle("button");
+        switchButton.innerText = switchButton.classList.contains("button") ? "ikonka" : "Zrobione?";
+        render();
     };
 
     const bindEvents = () => {
-        
+
         const taskDoneButton = document.querySelectorAll(".js-done");
 
         taskDoneButton.forEach((taskDoneButton, taskIndex) => {
-            taskDoneButton.addEventListener("click", () => { 
+            taskDoneButton.addEventListener("click", () => {
                 toggleTaskDone(taskIndex);
             });
         });
@@ -57,6 +63,15 @@
                 taskRemove(taskIndex);
             });
         });
+
+        const switchButton = document.querySelectorAll(".js-button");
+
+        switchButton.forEach((switchbutton) => {
+            switchbutton.addEventListener("click", () => {
+                toggleButton(switchbutton);
+            });
+        });
+
     };
 
     const onFormSubmit = (event) => {
