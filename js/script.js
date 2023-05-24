@@ -13,6 +13,7 @@
             <button class="js-remove">Usuń</button>
             ${task.content}
             </li>
+            <div class="border"></div>
             `;
         };
 

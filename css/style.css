@@ -22,30 +22,72 @@ html {
   background-color: green;
 }
 
+.border {
+  border: 1px solid #8080802b;
+  margin: 13px;
+}
+
 .container {
   max-width: 90%;
   margin: auto;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "newTask newTask newTask "
+    "form form form"
+    "taskList taskList taskList"
+    "task task task"
+  ;
 }
 
 .container__item {
   background-color: white;
-  margin: 1px;
   padding: 20px;
+  margin: 1px;
+}
+
+.container__item--header {
+  grid-area: header;
+}
+
+.container__item--addNewTask {
+  grid-area: newTask;
+  padding: 13px;
+}
+
+.container__item--form {
+  grid-area: form;
+}
+
+.container__item--taskList {
+  grid-area: taskList;
+  padding: 13px;
+  margin-top: 6px;
+}
+
+.container__item--task {
+  grid-area: task;
+  padding-top: 40px;
 }
 
 .form {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: space-between;
 }
 
 .form__input {
-  flex-grow: 1;
-  margin-right: 20px;
-  padding: 6px;
+  flex-basis: 84%;
+}
+
+@media (max-width: 490px) {
+  .form__input {
+    flex-grow: 1;
+  }
 }
 
 .form__button {
+  grid-area: button;
   padding: 6px;
   color: azure;
   background-color: teal;
@@ -54,6 +96,6 @@ html {
 
 @media (max-width: 490px) {
   .form__button {
-    width: 93%;
+    flex-grow: 1;
   }
 }
