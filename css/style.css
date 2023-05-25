@@ -14,12 +14,29 @@ html {
   background-color: #8080802b;
 }
 
+.list__item {
+  display: flex;
+  justify-content: space-between;
+}
+
 .list__itemlist__item--done {
   text-decoration: line-through;
 }
 
-.button {
+.list__button {
   background-color: green;
+  width: 25px;
+  height: 25px;
+  border: 0px;
+}
+
+.list__content {
+  flex-grow: 1;
+  padding-left: 6px;
+}
+
+.list__button--remove {
+  background-color: red;
 }
 
 .border {
@@ -28,7 +45,8 @@ html {
 }
 
 .container {
-  max-width: 90%;
+  word-break: break-word;
+  max-width: 69%;
   margin: auto;
   display: grid;
   grid-template-areas:
@@ -65,9 +83,10 @@ html {
   margin-top: 6px;
 }
 
-.container__item--task {
+.container__item--listItem {
   grid-area: task;
   padding-top: 40px;
+  list-style: none;
 }
 
 .form {
@@ -78,6 +97,7 @@ html {
 
 .form__input {
   flex-basis: 84%;
+  line-break: auto;
 }
 
 @media (max-width: 490px) {
@@ -87,7 +107,7 @@ html {
 }
 
 .form__button {
-  grid-area: button;
+
   padding: 6px;
   color: azure;
   background-color: teal;

@@ -9,9 +9,9 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item${task.done ? "list__item--done" : ""}">
-            <button class="js-button js-done">Zrobione?</button>
-            <button class="js-remove">Usuń</button>
-            ${task.content}
+            <button class="list__button js-done"></button>
+            <div class="list__content">${task.content}</div>
+            <button class="list__button list__button--remove js-remove"></button>
             </li>
             <div class="border"></div>
             `;
@@ -41,12 +41,6 @@
         render();
     };
 
-    const toggleButton = (switchButton) => {
-        switchButton.classList.toggle("button");
-        switchButton.innerText = switchButton.classList.contains("button") ? "ikonka" : "Zrobione?";
-        render();
-    };
-
     const bindEvents = () => {
 
         const taskDoneButton = document.querySelectorAll(".js-done");
@@ -64,15 +58,6 @@
                 taskRemove(taskIndex);
             });
         });
-
-        const switchButton = document.querySelectorAll(".js-button");
-
-        switchButton.forEach((switchbutton) => {
-            switchbutton.addEventListener("click", () => {
-                toggleButton(switchbutton);
-            });
-        });
-
     };
 
     const onFormSubmit = (event) => {
