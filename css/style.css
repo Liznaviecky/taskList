@@ -41,7 +41,7 @@ html {
 
 .border {
   border: 1px solid #8080802b;
-  margin: 13px;
+  margin: 13px 0px;
 }
 
 .container {
@@ -86,7 +86,6 @@ html {
 .container__item--listItem {
   grid-area: task;
   padding-top: 40px;
-  list-style: none;
 }
 
 .form {
