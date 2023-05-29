@@ -21,13 +21,15 @@ html {
 
 .list__itemlist__item--done {
   text-decoration: line-through;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .list__button {
   background-color: green;
-  width: 25px;
+  min-width: 25px;
   height: 25px;
-  border: 0px;
+  border: 0px; 
 }
 
 .list__content {
@@ -62,6 +64,7 @@ html {
   background-color: white;
   padding: 20px;
   margin: 1px;
+  list-style: none;
 }
 
 .container__item--header {
