@@ -39,6 +39,16 @@ html {
 
 .list__button--remove {
   background-color: red;
+  max-width: 25px;
+  min-width: 25px;
+  max-height: 25px;
+  min-height: 25px;
+}
+
+.list__bin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .border {
