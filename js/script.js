@@ -11,7 +11,7 @@
             <li class="list__item${task.done ? "list__item--done" : ""}">
             <button class="list__button js-done"></button>
             <div class="list__content">${task.content}</div>
-            <button class="list__button list__button--remove js-remove"><span class=list__bin>🗑️</span></button>
+            <button class="list__button list__button--remove js-remove">🗑️</button>
             </li>
             <div class="border"></div>
             `;
