@@ -19,10 +19,15 @@ html {
   justify-content: space-between;
 }
 
-.list__itemlist__item--done {
+.list__content {
+  flex-grow: 1;
+  padding-left: 6px;
+}
+
+.list__contentlist__content--done {
   text-decoration: line-through;
-  display: flex;
-  flex-wrap: nowrap;
+  flex-grow: 1;
+  padding-left: 6px;
 }
 
 .list__button {
@@ -32,11 +37,6 @@ html {
   min-height: 25px;
   max-height: 25px;
   border: 0px; 
-}
-
-.list__content {
-  flex-grow: 1;
-  padding-left: 6px;
 }
 
 .list__button--remove {
