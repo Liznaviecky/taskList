@@ -30,3 +30,8 @@
     align-items: center;
     justify-content: center; 
   }
+
+  .list__border {
+    border: 1px solid #8080802b;
+    margin: 13px 0px;
+  }
