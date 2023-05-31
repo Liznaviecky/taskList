@@ -1,86 +1,101 @@
 {
-    const tasks = [
+    const tasks = [];
 
-    ];
+const render = () => {
+    htmlString = "";
 
-    const render = () => {
-        htmlString = "";
+    for (const task of tasks) {
+        htmlString += `
+        <li class="list__item">
+        <button class="list__button js-done">${task.done ? "✓" : ""}</button>
+        <div class="list__content${task.done ? "list__content--done" : ""}">${task.content}</div>
+        <button class="list__button list__button--remove js-remove">🗑️</button>
+        </li>
+        <div class="list__border"></div>
+        `;
+    }
 
-        for (const task of tasks) {
-            htmlString += `
-            <li class="list__item">
-            <button class="list__button js-done">${task.done ? "✓" : ""}</button>
-            <div class="list__content${task.done ? "list__content--done" : ""}">${task.content}</div>
-            <button class="list__button list__button--remove js-remove">🗑️</button>
-            </li>
-            <div class="list__border"></div>
-            `;
-        };
+    document.querySelector(".js-tasks").innerHTML = htmlString;
 
-        document.querySelector(".js-tasks").innerHTML = htmlString;
+    bindEvents();
+};
 
-        bindEvents();
-    };
+const saveTasksToLocalStorage = () => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+};
 
-    const addNewTask = (newTaskContent) => {
-        tasks.push(
-            {
-                content: newTaskContent,
-            }
-        );
-        render();
-    };
+const loadTasksFromLocalStorage = () => {
+    const savedTasks = localStorage.getItem("tasks");
 
-    const toggleTaskDone = (taskIndex,) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
-        render();
-    };
+    if (savedTasks) {
+        tasks.push(...JSON.parse(savedTasks));
+    }
+};
 
-    const taskRemove = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
-        render();
-    };
+const addNewTask = (newTaskContent) => {
+    tasks.push({
+        content: newTaskContent,
+        done: false,
+    });
 
-    const bindEvents = () => {
+    saveTasksToLocalStorage();
+    render();
+};
 
-        const taskDoneButton = document.querySelectorAll(".js-done");
+const toggleTaskDone = (taskIndex) => {
+    tasks[taskIndex].done = !tasks[taskIndex].done;
 
-        taskDoneButton.forEach((taskDoneButton, taskIndex) => {
-            taskDoneButton.addEventListener("click", () => {
-                toggleTaskDone(taskIndex);
-            });
+    saveTasksToLocalStorage();
+    render();
+};
+
+const taskRemove = (taskIndex) => {
+    tasks.splice(taskIndex, 1);
+
+    saveTasksToLocalStorage();
+    render();
+};
+
+const bindEvents = () => {
+    const taskDoneButton = document.querySelectorAll(".js-done");
+
+    taskDoneButton.forEach((taskDoneButton, taskIndex) => {
+        taskDoneButton.addEventListener("click", () => {
+            toggleTaskDone(taskIndex);
         });
+    });
 
-        const taskRemoveButton = document.querySelectorAll(".js-remove");
+    const taskRemoveButton = document.querySelectorAll(".js-remove");
 
-        taskRemoveButton.forEach((taskRemoveButton, taskIndex) => {
-            taskRemoveButton.addEventListener("click", () => {
-                taskRemove(taskIndex);
-            });
+    taskRemoveButton.forEach((taskRemoveButton, taskIndex) => {
+        taskRemoveButton.addEventListener("click", () => {
+            taskRemove(taskIndex);
         });
-    };
+    });
+};
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
+const onFormSubmit = (event) => {
+    event.preventDefault();
 
-        const input = document.querySelector(".js-newTask");
-        const newTaskContent = input.value.trim();
+    const input = document.querySelector(".js-newTask");
+    const newTaskContent = input.value.trim();
 
-        if (newTaskContent !== "") {
-            addNewTask(newTaskContent);
-            input.value = "";
-        }
+    if (newTaskContent !== "") {
+        addNewTask(newTaskContent);
+        input.value = "";
+    }
 
-        input.focus();
-    };
+    input.focus();
+};
 
-    const init = () => {
-        render();
+const init = () => {
+    loadTasksFromLocalStorage();
+    render();
 
-        const form = document.querySelector(".js-form");
+    const form = document.querySelector(".js-form");
 
-        form.addEventListener("submit", onFormSubmit);
-    };
+    form.addEventListener("submit", onFormSubmit);
+};
 
-    init();
+init();
 }

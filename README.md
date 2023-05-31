@@ -5,4 +5,4 @@
 <h3> Description </h3> 
 A simple task list. If you find it usefull, feel free to use :) 
 <h3> Used technologies </h3>
-ES6+ features, BEM
+ES6+ features, BEM, ChatGPT
