@@ -12,6 +12,12 @@
     ;
 }
 
+@media (max-width: 490px) {
+    .container {
+        min-width: 100%;
+    }
+}
+
 .container__item {
     background-color: white;
     padding: 20px;
