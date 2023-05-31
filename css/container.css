@@ -4,41 +4,41 @@
     margin: auto;
     display: grid;
     grid-template-areas:
-      "header header header"
-      "newTask newTask newTask "
-      "form form form"
-      "taskList taskList taskList"
-      "task task task"
+        "header header header"
+        "newTask newTask newTask "
+        "form form form"
+        "taskList taskList taskList"
+        "task task task"
     ;
-  }
-  
-  .container__item {
+}
+
+.container__item {
     background-color: white;
     padding: 20px;
     margin: 1px;
     list-style: none;
-  }
-  
-  .container__item--header {
+}
+
+.container__item--header {
     grid-area: header;
-  }
-  
-  .container__item--addNewTask {
+}
+
+.container__item--addNewTask {
     grid-area: newTask;
     padding: 13px;
-  }
-  
-  .container__item--form {
+}
+
+.container__item--form {
     grid-area: form;
-  }
-  
-  .container__item--taskList {
+}
+
+.container__item--taskList {
     grid-area: taskList;
     padding: 13px;
     margin-top: 6px;
-  }
-  
-  .container__item--listItem {
+}
+
+.container__item--listItem {
     grid-area: task;
     padding-top: 40px;
-  }
+}
