@@ -1,0 +1,30 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form__input {
+    flex-basis: 84%;
+    line-break: auto;
+  }
+  
+  @media (max-width: 490px) {
+    .form__input {
+      flex-grow: 1;
+    }
+  }
+  
+  .form__button {
+  
+    padding: 6px;
+    color: azure;
+    background-color: teal;
+    border: 0px;
+  }
+  
+  @media (max-width: 490px) {
+    .form__button {
+      flex-grow: 1;
+    }
+  }

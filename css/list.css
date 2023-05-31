@@ -1,0 +1,32 @@
+.list__item {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .list__content {
+    flex-grow: 1;
+    padding-left: 6px;
+  }
+  
+  .list__contentlist__content--done {
+    text-decoration: line-through;
+    flex-grow: 1;
+    padding-left: 6px;
+  }
+  
+  .list__button {
+    background-color: green;
+    color: white;
+    min-width: 25px;
+    max-width: 25px;
+    min-height: 25px;
+    max-height: 25px;
+    border: 0px; 
+  }
+  
+  .list__button--remove {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
