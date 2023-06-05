@@ -2,6 +2,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    margin: 1px;
+    list-style: none;
+}
+
+.container__item--form {
+    grid-area: form;
+    padding: 20px;
+    min-height: 80px;
 }
 
 .form__input {
