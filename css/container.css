@@ -1,6 +1,6 @@
 .container {
     word-break: break-word;
-    max-width: 69%;
+    max-width: 1000px;
     margin: auto;
     display: grid;
     grid-template-areas:
@@ -27,20 +27,22 @@
 
 .container__item--header {
     grid-area: header;
+    padding: 20px;
 }
 
 .container__item--addNewTask {
     grid-area: newTask;
-    padding: 13px;
+    padding: 20px;
 }
 
 .container__item--form {
     grid-area: form;
+    padding: 20px;
 }
 
 .container__item--taskList {
     grid-area: taskList;
-    padding: 13px;
+    padding: 20px;
     margin-top: 6px;
 }
 
