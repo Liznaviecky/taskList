@@ -17,10 +17,10 @@
 .list__button {
     background-color: green;
     color: white;
-    min-width: 25px;
-    max-width: 25px;
-    min-height: 25px;
-    max-height: 25px;
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
     border: 0px;
 }
 
