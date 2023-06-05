@@ -9,9 +9,10 @@
     line-break: auto;
 }
 
-@media (max-width: 490px) {
+@media (max-width: 775px) {
     .form__input {
         flex-grow: 1;
+        min-height: 60%;
     }
 }
 
@@ -23,7 +24,7 @@
     border: 0px;
 }
 
-@media (max-width: 490px) {
+@media (max-width: 775px) {
     .form__button {
         flex-grow: 1;
     }

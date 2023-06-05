@@ -38,6 +38,7 @@
 .container__item--form {
     grid-area: form;
     padding: 20px;
+    min-height: 80px;
 }
 
 .container__item--taskList {
