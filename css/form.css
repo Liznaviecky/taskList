@@ -8,12 +8,6 @@
     list-style: none;
 }
 
-.container__item--form {
-    grid-area: form;
-    padding: 20px;
-    min-height: 80px;
-}
-
 .form__input {
     flex-basis: 84%;
     line-break: auto;
@@ -22,7 +16,9 @@
 @media (max-width: 775px) {
     .form__input {
         flex-grow: 1;
-        min-height: 60%;
+        margin-bottom: 6px;
+        height: 35px;
+        font-size: 20px;
     }
 }
 

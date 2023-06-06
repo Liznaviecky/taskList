@@ -17,7 +17,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/list.css">
-    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/form.css">
     <script defer src="js/script.js"></script>
     <title>ToDoList</title>
@@ -25,16 +25,24 @@
 
 <body class="body">
 
-    <div class="container">
-        <h1 class="container__item--header">Lista zadań</h1>
-        <h3 class="container__item container__item--addNewTask">Dodaj nowe zadanie</h3>
-        <form class="container__item--form form js-form">
-            <input class="form__input js-newTask" placeholder="co jest do zrobienia?" autofocus>
-            <button class="form__button">Dodaj zadanie</button>
-        </form>
-        <h3 class="container__item container__item--taskList">Lista zadań</h3>
-        <ul class="container__item container__item--listItem js-tasks"></ul>
-    </div>
+    <main class="main">
+
+        <h1 class="main__header">Lista zadań</h1>
+        <h3 class="main__header main__header--newTask">Dodaj nowe zadanie</h3>
+
+        <section class="main__section main__section--form">
+            <form class="form js-form">
+                <input class="form__input js-newTask" placeholder="co jest do zrobienia?" autofocus>
+                <button class="form__button">Dodaj zadanie</button>
+            </form>
+        </section>
+
+        <section class="main__section main__section--taskList">
+            <h3 class="main__section main__section--header">Lista zadań</h3>
+            <ul class="js-tasks"></ul>
+        </section>
+
+    </main>
 
 </body>
 

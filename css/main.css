@@ -1,0 +1,53 @@
+.main {
+    
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "newTask newTask newTask "
+        "form form form"
+        "taskList taskList taskList" 
+    ;
+}
+
+@media (max-width: 490px) {
+    .main {
+        min-width: 100%;
+    }
+}
+
+.main__header {
+    grid-area: header;
+    background-color: white;
+    padding: 20px;
+    margin: 1px;
+    list-style: none;
+}
+
+.main__header--newTask {
+    grid-area: newTask;
+}
+
+.main__section {
+    background-color: white;
+    padding: 20px;
+    margin: 1px;
+    list-style: none;
+}
+
+.main__section--form {
+    grid-area: form;
+    padding: 0px;
+    margin: 13px 0px;
+}
+
+.main__section--taskList {
+    grid-area: taskList;
+}
+
+.main__section--header {
+    padding-bottom: 26px;
+    padding-left: 0px;
+    border-bottom: 3px solid #80808030;
+}
