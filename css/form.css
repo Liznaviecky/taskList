@@ -1,11 +1,10 @@
 .form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
     background-color: white;
     padding: 20px;
     margin: 1px;
-    list-style: none;
 }
 
 .form__input {
@@ -14,10 +13,8 @@
 }
 
 @media (max-width: 775px) {
-    .form__input {
-        flex-grow: 1;
-        margin-bottom: 6px;
-        height: 35px;
+    .form {
+        grid-template-columns: 1fr;
         font-size: 20px;
     }
 }
@@ -27,10 +24,4 @@
     color: azure;
     background-color: teal;
     border: 0px;
-}
-
-@media (max-width: 775px) {
-    .form__button {
-        flex-grow: 1;
-    }
 }

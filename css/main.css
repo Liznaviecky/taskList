@@ -21,7 +21,6 @@
     background-color: white;
     padding: 20px;
     margin: 1px;
-    list-style: none;
 }
 
 .main__header--newTask {
@@ -32,7 +31,6 @@
     background-color: white;
     padding: 20px;
     margin: 1px;
-    list-style: none;
 }
 
 .main__section--form {
