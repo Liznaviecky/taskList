@@ -1,5 +1,5 @@
 {
-    const tasks = [];
+    let tasks = [];
 
     const render = () => {
         htmlString = "";
@@ -32,10 +32,10 @@
     };
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-            done: false,
-        });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent, done: false },
+        ];
 
         saveTasksToLocalStorage();
         render();
