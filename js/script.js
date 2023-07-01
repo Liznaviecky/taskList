@@ -49,7 +49,7 @@
     };
 
     const taskRemove = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = tasks.filter((whatever, index) => index !== taskIndex);
 
         saveTasksToLocalStorage();
         render();
