@@ -19,39 +19,24 @@
         bindEvents();
     };
 
-    const saveTasksToLocalStorage = () => {
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-    };
-
-    const loadTasksFromLocalStorage = () => {
-        const savedTasks = localStorage.getItem("tasks");
-
-        if (savedTasks) {
-            tasks.push(...JSON.parse(savedTasks));
-        }
-    };
-
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
             { content: newTaskContent, done: false },
         ];
 
-        saveTasksToLocalStorage();
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
 
-        saveTasksToLocalStorage();
         render();
     };
 
     const taskRemove = (taskIndex) => {
         tasks = tasks.filter((whatever, index) => index !== taskIndex);
 
-        saveTasksToLocalStorage();
         render();
     };
 
@@ -88,7 +73,6 @@
     };
 
     const init = () => {
-        loadTasksFromLocalStorage();
         render();
 
         const form = document.querySelector(".js-form");
